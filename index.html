@@ -1,0 +1,188 @@
+<!--**********
+NAME: Joshua Lent
+DATE: 17 Nov 2024
+PROJ: Four
+DESC: Responsive Portfolio Website
+***********-->
+
+<!--I once again want to apologize for this project being late, I REALLY need to work on managing my time with projects. 
+This site ended up quite rough as I view it, Although I did end up actually learning ALOT about what I don't know, what I can improve at, and where I can most improve at. I think i never really grasped how to do the responsive desgin which screwed me over multiple times on this project.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+
+    <!--Import bootstrap stylesheet for my form elements-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Joshua Lent - Portfolio</title>
+</head>
+<!--Body which can change to light vs dark mode (Used w3schools for the idea of adding class lists to body element and specific css selectors based on those added and removed class lists)-->
+
+<body id="body" class="light-mode">
+    <!--Nav bar which I spent way to much time trying to get to work how I thought it would (Credit w3schools responsive nav bar for the original)-->
+    <div class="topnav" id="myTopnav">
+        <a href="javascript:void(0);" class="nav-icon contrast-icon contrast-icon--left" onclick="toggleDisplayMode()">
+            <i><svg height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="m12 22c5.5228475 0 10-4.4771525 10-10s-4.4771525-10-10-10-10 4.4771525-10 10 4.4771525 10 10 10zm0-1.5v-17c4.6944204 0 8.5 3.80557963 8.5 8.5 0 4.6944204-3.8055796 8.5-8.5 8.5z"
+                        fill="#212121" /></svg></i>
+        </a>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+
+        <a href="javascript:void(0);" class="nav-icon hamburger-icon" onclick="responsiveNav()">
+            <i><svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z"
+                        fill="#000000" />
+                </svg></i>
+        </a>
+    </div>
+    <!--header section with page introduction-->
+    <header id="home">
+        <h1 class="intro-home-heading">Hey, It's Josh</h1>
+        <h2 class="description-home-heading"><span class="geist-mono">Maker of Web Things</span></h2>
+    </header>
+    <!--RESPONSIVE DESIGN
+    Mobile: top nav bar with display mode (maybe also my Github) and hamburger menu that has quick links to Home, about, projects, and contact sections.
+    Tablet: top nav that shrinks and grows with resizing that displays links to page sections. Content aligned in two trimmed/condensed columns with images and i-frames to the left and text descriptions to the right. "View my work" github section aligned to the left and request resume to the right.
+    Desktop: Similar to tablet, two column layout with visuals left aligned and main content on the right side.
+    -->
+
+    <!-- main page content with about, projects, and contact section-->
+    <div class="main-content">
+
+        <section class="about" id="about">
+            <h2>About</h2>
+            <!--Image, images, or-->
+            <!--About section-->
+            <div class="row">
+                <div class="col-s-6 col-6"><img src="/images/FixedCircleHeadshotPNG.png"
+                        alt="person smiling wearing Kalamazoo Valley lanyard"></div>
+                <p class="col-s-6 col-6">I am a student at KVCC and Kalamazoo Central Highschool. I make web things for
+                    fun and
+                    am looking for a
+                    career in web development. I have experience with HTML, CSS, JavaScript and Python. I am exploring
+                    frontend web technologies like React and Bootstrap while I learn the Django web framework. I have
+                    interests in both front and back end web development and am working towards enough fullstack
+                    knowledge
+                    to make my own project ideas. I enjoy learning about tech and business and have plans to stay in
+                    Michigan
+                    to continue my education at a University. For hobbies I enjoy weightlifting, gaming, and listening
+                    to
+                    lots of music.</p>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-s-6 col-7"><img src="/images/SCSmacbookScreenRemovalLandscape.jpg"
+                        alt="person repairing a macbook">
+                </div>
+                <p class="col-s-9 col-5">During the summer of 2024 I helped out the Scholcraft Community Schools IT
+                    department
+                    to prepare for the their school year.
+                    In my role I helped with remote device management, performed repairs on school laptops, and upgraded
+                    machines in the computer lab to windows 11.
+                    During my time working with Schoolcraft Community Schools, I got valuable exerience in business and
+                    technology by working with IT professionals.</p>
+            </div>
+
+        </section>
+        <!--Projects section-->
+        <section class="projects" id="projects">
+            <h2>Projects</h2>
+            <!-- All projects are links to external my Github pages -->
+            <div class="project project-one row">
+                <div class="proj-imgs proj-imgs--one col-s-6 col-8"><a
+                        href="https://joshbutwhy.github.io/portfolioV1/index.html"><img
+                            src="/images/PortfoolioV1Pic.png" alt="Portfolio page about me section"></a></div>
+                <div class="proj-text col-s-9 col-4">
+                    <p>Enjoy My first Portfolio Project made for desktop viewing.</p>
+                </div>
+
+            </div>
+            <div class="project project-two row">
+                <div class="proj-imgs proj-imgs--two col-s-6 col-8"><a
+                        href="https://joshbutwhy.github.io/html/hangman.html"><img src="/images/HangmanGamePic.png"
+                            alt="hangman game on the browser"></a></div>
+                <div class="proj-text col-s-9 col-4">
+                    <p>Enjoy the classic game of hangman in your browser written with JavaScript.</p>
+                </div>
+            </div>
+            <div class="project project-three row">
+                <div class="proj-img proj-imgs--three col-s-6 col-8"><a
+                        href="https://joshbutwhy.github.io/html/frogSite.html"><img src="/images/FrogWikiPic.png"
+                            alt="Old HTML style wiki page about frogs"></a></div>
+                <div class="proj-text col-4 col-s-6">
+                    <p>One of my first web projects—enjoy a web 1.0 wiki experience!</p>
+                </div>
+            </div>
+        </section>
+        <!--contact section-->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="row">
+                <div id="contact-me" class="col-s-7 col-6">
+                    <h3>Find me on Github</h3>
+                    <p>I mostly stay off of Social Media but GitHub is a great place to see more of my work as I
+                        publicize
+                        it and
+                        get in contact with me</p>
+                    <a href="https://github.com/joshButWhy" target="_blank"><svg width="98" height="96"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
+                                fill="#24292f" /></svg></a>
+                    <a href="mailto:me@example.com">me@example.com </a>
+                    <a href="tel:+11234567890"> +1 (123) 456 7890</a>
+                </div>
+                <div class="resume-form col-s-5 col-6">
+                    <p>Please provide your information for access to my resume.</p>
+                    <form onsubmit="event.preventDefault(); makeResumeAvailable()" class="resume-request-form">
+                        <!--Form currently does nothing but prove that user is willing to give up their info-->
+                        <label for="name-input">Name: </label><input type="text" id="name-input" class="form-control"
+                            required>
+                        <label for="email-input">Email: </label><input type="email" id="email-input"
+                            class="form-control" required>
+                        <button type="submit" value="submit" onclick="testRunning()">Submit</button>
+                    </form>
+                    <div class="view-resume display-none view-resume-btn"><a href="/images/JoshuaLentResume.pdf"
+                            target="_blank">View Resume</a></div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+    <div>
+        <!--Footer with socials icons-->
+        <footer>
+            <a class="icon" href="https://www.linkedin.com/in/joshua-lent-043a3b327/" target="_blank"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
+                    <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg></a>
+
+            <a class="icon" href="https://github.com/joshButWhy" target="_blank"><svg class="svg-icon"
+                    style="width: 2em; height: 2em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+                    viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M498.894518 100.608396c-211.824383 0-409.482115 189.041494-409.482115 422.192601 0 186.567139 127.312594 344.783581 295.065226 400.602887 21.13025 3.916193 32.039717-9.17701 32.039717-20.307512 0-10.101055 1.176802-43.343157 1.019213-78.596056-117.448946 25.564235-141.394311-49.835012-141.394311-49.835012-19.225877-48.805566-46.503127-61.793368-46.503127-61.793368-38.293141-26.233478 3.13848-25.611308 3.13848-25.611308 42.361807 2.933819 64.779376 43.443441 64.779376 43.443441 37.669948 64.574714 98.842169 45.865607 122.912377 35.094286 3.815909-27.262924 14.764262-45.918819 26.823925-56.431244-93.796246-10.665921-192.323237-46.90017-192.323237-208.673623 0-46.071292 16.498766-83.747379 43.449581-113.332185-4.379751-10.665921-18.805298-53.544497 4.076852-111.732757 0 0 35.46063-11.336186 116.16265 43.296085 33.653471-9.330506 69.783343-14.022365 105.654318-14.174837 35.869952 0.153496 72.046896 4.844332 105.753579 14.174837 80.606853-54.631248 116.00813-43.296085 116.00813-43.296085 22.935362 58.18826 8.559956 101.120049 4.180206 111.732757 27.052123 29.584806 43.443441 67.260893 43.443441 113.332185 0 162.137751-98.798167 197.850114-192.799074 208.262254 15.151072 13.088086 28.65155 38.804794 28.65155 78.17957 0 56.484456-0.459464 101.94381-0.459464 115.854635 0 11.235902 7.573489 24.381293 29.014824 20.2543C825.753867 867.330798 933.822165 709.10924 933.822165 522.700713c0-233.155201-224.12657-422.192601-434.927647-422.192601L498.894518 100.608396z" />
+                    </svg></a><br>
+            <span class="desktop-hide">&copy; 2024 Joshua Lent</span>
+
+        </footer>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
